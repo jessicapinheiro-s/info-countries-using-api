@@ -3,10 +3,11 @@ import { Container, FlagImageContainer, FlagImage, Informations, Name, SubInform
 
 interface Country {
   cca2: string;
-  name:{
-    common:string;
+  name: {
+    common: string;
   }
-  capital:string | string[];
+  capital: string | string[];
+  subregion: string;
 
 }
 
@@ -16,7 +17,7 @@ interface Country {
 const MeuComponente = () => {
   const urlCountriesFlags = 'https://flagsapi.com/';
   const linkRequestuInfo: string = 'https://restcountries.com/v3.1/';
-    const requestType = 'all';
+  const requestType = 'all';
   const typeFlag = '/flat/';
   const tamFlag = '64.png';
 
@@ -34,22 +35,25 @@ const MeuComponente = () => {
   return (
     <div className='container-flags' style={{ gap: '50px', display: 'flex', flexWrap: 'wrap' }}>
 
-        {
-          countries.map(f => (   
+      {
+        countries.map(f => (
 
-            <Container >
-              <FlagImageContainer>
-                <FlagImage key={f?.name.common} src={`${urlCountriesFlags}${f.cca2}${typeFlag}${tamFlag}`} alt={f?.name.common} />
-              </FlagImageContainer>
+          <Container >
+            <FlagImageContainer>
+              <FlagImage key={f?.name.common} src={`${urlCountriesFlags}${f.cca2}${typeFlag}${tamFlag}`} alt={f?.name.common} />
+            </FlagImageContainer>
             <h1>{f?.name.common}</h1>
-            <p>{f.capital}</p>
-            </Container>
+            <p>{Array.isArray(f.capital) ? f.capital.map(item => (
+              <p>{item}</p>
+            )) : f.capital}</p>
+            <p>{f.subregion}</p>
+          </Container>
 
 
-          ))
-        }
-      </div>
-      )
+        ))
+      }
+    </div>
+  )
 };
 
-      export default MeuComponente;
+export default MeuComponente;
