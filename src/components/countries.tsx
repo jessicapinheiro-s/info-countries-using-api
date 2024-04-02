@@ -53,7 +53,7 @@ const MeuComponente = () => {
             <p>Region: {f.subregion}</p>
             <p>Areaa: {f.area}</p>
             <p>Population: {f.population}</p>
-            <p><a href={f.maps.googleMaps}>Google Maps</a></p>
+            <p><a href={f.maps.googleMaps} target="_blank" rel="noopener noreferrer">Google Maps</a></p>
           </Container>
 
 
