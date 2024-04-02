@@ -2,15 +2,14 @@ import styled from "styled-components";
 
 export let Container = styled.article`
   background-color: #fff;
-  max-width: 264px;
-  width: 100%;
+  width: 300px;
 
   display: flex;
   flex-direction: column;
 
   justify-self: center;
 
-  border-radius: 0.313rem;
+  border-radius: 10px;
   
   box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.1);
 
@@ -26,7 +25,21 @@ export let Container = styled.article`
     transform: scale(1.1);
     transition: all 0.5s;
   }
+  >* {
+    padding: 15px 6px;
 
+  }
+  p{
+    word-wrap: breack-word;
+    a{
+      color: #000;
+      text-decoration: none;
+  
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
   @media screen and (min-width: 900px) {
     justify-self: flex-start;
   }
