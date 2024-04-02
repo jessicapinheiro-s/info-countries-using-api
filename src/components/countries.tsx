@@ -37,7 +37,7 @@ const MeuComponente = () => {
 
 
   return (
-    <div className='container-flags' style={{ gap: '50px', display: 'flex', flexWrap: 'wrap', justifyContent:'center' }}>
+    <div className='container-flags' style={{ gap: '50px', display: 'flex', flexWrap: 'wrap', justifyContent:'center' , margin: '50px 0px'}}>
 
       {
         countries.map(f => (
