@@ -3,7 +3,7 @@ import styled from "styled-components";
 export let Container = styled.article`
   background-color: #fff;
   width: 300px;
-
+  padding: 10px 0px;
   display: flex;
   flex-direction: column;
 
@@ -23,17 +23,19 @@ export let Container = styled.article`
 
   &:hover {
     transform: scale(1.1);
-    transition: all 0.5s;
   }
   >* {
     padding: 15px 6px;
-
   }
+
   p{
     word-wrap: breack-word;
     a{
       color: #000;
       text-decoration: none;
+      background-color: #b6e4ff;
+      padding: 10px;
+      border-radius: 8px;
   
       &:hover{
         text-decoration: underline;
