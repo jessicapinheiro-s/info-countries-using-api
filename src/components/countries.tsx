@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, FlagImageContainer, FlagImage, Informations, Name, SubInformations, InformationLabel } from "./card-style";
+import { Container, FlagImageContainer, FlagImage } from "./card-style";
 
 interface Country {
   cca2: string;
@@ -8,7 +8,11 @@ interface Country {
   }
   capital: string | string[];
   subregion: string;
-
+  area : string;
+  population: string;
+  maps:{
+    googleMaps: string;
+  }
 }
 
 
@@ -33,7 +37,7 @@ const MeuComponente = () => {
 
 
   return (
-    <div className='container-flags' style={{ gap: '50px', display: 'flex', flexWrap: 'wrap' }}>
+    <div className='container-flags' style={{ gap: '50px', display: 'flex', flexWrap: 'wrap', justifyContent:'center' }}>
 
       {
         countries.map(f => (
@@ -42,11 +46,14 @@ const MeuComponente = () => {
             <FlagImageContainer>
               <FlagImage key={f?.name.common} src={`${urlCountriesFlags}${f.cca2}${typeFlag}${tamFlag}`} alt={f?.name.common} />
             </FlagImageContainer>
-            <h1>{f?.name.common}</h1>
-            <p>{Array.isArray(f.capital) ? f.capital.map(item => (
-              <p>{item}</p>
+            <h2>{f?.name.common}</h2>
+            <p>Capital:{Array.isArray(f.capital) ? f.capital.map(item => (
+              <p> {item}</p>
             )) : f.capital}</p>
-            <p>{f.subregion}</p>
+            <p>Region: {f.subregion}</p>
+            <p>Areaa: {f.area}</p>
+            <p>Population: {f.population}</p>
+            <p><a href={f.maps.googleMaps}>Google Maps</a></p>
           </Container>
 
 

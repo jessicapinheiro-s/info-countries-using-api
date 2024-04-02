@@ -3,7 +3,6 @@ import styled from "styled-components";
 export let Container = styled.article`
   background-color: #fff;
   max-width: 264px;
-  height: 336px;
   width: 100%;
 
   display: flex;
@@ -25,6 +24,7 @@ export let Container = styled.article`
 
   &:hover {
     transform: scale(1.1);
+    transition: all 0.5s;
   }
 
   @media screen and (min-width: 900px) {
