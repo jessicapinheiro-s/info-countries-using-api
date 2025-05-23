@@ -8,3 +8,4 @@
 - React.js
 - TypeScript
 - API Rest
+- Styled Component
